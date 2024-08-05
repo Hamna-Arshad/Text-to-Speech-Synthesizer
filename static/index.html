@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Text to Speech</title>
+   
+</head>
+
+<body>
+    <h1>Text-to-Speech Converter</h1>
+    <form id="textToSpeechForm" onsubmit="submitForm(event)">
+
+        <div class="options">
+
+            <label class="label1" for="voice">Choose a TTS-Module:</label>
+            <select class="val" name="model" id="model">
+                <option class="val" value="Piper-TTS">Piper-TTS</option>
+                <option class="val" value="Style-TTS">Style-TTS</option>
+               
+            </select>
+        </div>
+
+        <div class="options">
+
+            <label id="label1" class="label1" for="voice">Choose a voice:</label>
+            <select class="val" name="voice" id="voice"  >
+                <option value="" disabled selected hidden></option>
+                <option class="val" value="en_US-joe-medium" name ="piper_voice">en_US-joe-medium</option>
+                <option class="val" value="en_US-danny-low" name ="piper_voice">en_US-danny-low</option>
+                <option class="val" value="en_US-kathleen-low" name ="piper_voice">en_US-kathleen-low</option>
+                <option class="val" value="en_GB-southern_english_female-low" name ="piper_voice">en_GB-southern_english_female-low</option>
+                <option class="val" value="female_high" name ="style_voice">female_high</option>
+                <option class="val" value="male_medium" name ="style_voice">male_medium</option>
+                <option class="val" value="female_em" name ="style_voice">female_em</option>
+                <option class="val" value="male_low" name ="style_voice">male_low</option>
+            </select>
+        </div>
+
+        <div class="text-area">
+            <div class="label2">
+                <label for="text" class="label2">Enter text:</label>
+            </div>
+            <textarea id="text" name="text" rows="12" cols="120"></textarea>
+            <br>
+            <button type="submit" class="button">Convert to Speech</button>
+        </div>
+
+    </form>
+    <audio id="audio" controls>
+        <source id="audioSource" src="" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+<script src="/static/index.js"></script>
+</body>
+
+</html>
